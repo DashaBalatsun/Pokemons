@@ -9,6 +9,16 @@ import UIKit
 
 final class PokemonsListView: UIView {
     
+    private var viewModel = PokemonsListViewModel() {
+        didSet {
+            spinner.stopAnimating()
+            tableView.isHidden = false
+            tableView.reloadData()
+            UIView.animate(withDuration: 0.3) {
+                self.tableView.alpha = 1
+            }
+        }
+    }
     private let tableView = UITableView()
     private let spinner = UIActivityIndicatorView(style: .large)
     
@@ -22,6 +32,10 @@ final class PokemonsListView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configure(with viewModel: PokemonsListViewModel) {
+        self.viewModel = viewModel
     }
 }
 
@@ -47,6 +61,8 @@ extension PokemonsListView {
     func setupTableView() {
         addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isHidden = true
+        tableView.alpha = 0
         tableView.separatorColor = .clear
         tableView.backgroundColor = UIColor(
             red: 11/255,

@@ -10,6 +10,7 @@ import UIKit
 final class PokemonsListViewController: UIViewController {
 
     private let pokemonListView = PokemonsListView()
+    private let viewModel = PokemonsListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
