@@ -9,15 +9,59 @@ import Foundation
 
 // Primary API service object to get Pokemons data
 final class NetworkManager {
-// Shared singleton instance
+    
     static let shared = NetworkManager()
-// Privatized constructor
+    
     private init() {}
-// Send Pokemons API Call
-// Parameters:
-//  - request: Request instance
-//  - completion: Callback with data or error
-    public func fetchData(_ request: Request, completion: @escaping () -> Void) {
+    
+    enum NetworkError: Error {
+        case invalidUrl
+        case invalidData
+        case invalidJSONData
+    }
+    
+    public func fetchData<T: Decodable>(
+        url: URL?,
+        expecting: T.Type,
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        guard let url = url else {
+            completion(.failure(NetworkError.invalidUrl))
+            return
+        }
         
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(NetworkError.invalidData))
+                }
+                return
+            }
+            
+            do {
+                let _ = try JSONSerialization.jsonObject(with: data, options: [])
+            } catch {
+                print("Received invalid JSON data for \(url)")
+                completion(.failure(NetworkError.invalidJSONData))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let result = try decoder.decode(expecting, from: data)
+                completion(.success(result))
+            } catch {
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print("Error \(error.localizedDescription) for url: \(url) with data: \(dataString)")
+                }
+                completion(.failure(error))
+            }
+        }
+        task.resume() 
     }
 }
+
+
