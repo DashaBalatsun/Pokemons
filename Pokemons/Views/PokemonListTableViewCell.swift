@@ -7,7 +7,7 @@
 import UIKit
 
 final class PokemonListTableViewCell: UITableViewCell {
-    static var cellID: String {String(describing: self)}
+    static let cellIdentifier = "PokemonListTableViewCell"
     
     //MARK: - Constants
     private enum Constants {
@@ -36,19 +36,10 @@ final class PokemonListTableViewCell: UITableViewCell {
         return lbl
     }()
     
-    private let pokemonGameIndexLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .darkGray
-        lbl.font = .systemFont(ofSize: 16.0, weight: .regular)
-        lbl.textAlignment = NSTextAlignment.left
-        return lbl
-    }()
-    
     private let containerView = UIView()
-    private let pokemonParametersStackView = UIStackView()
     private let backgroundPokemonView = UIView()
     
-//    private let pokemonImage = ImageLoader()
+    private let pokemonImage = ImageLoader()
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,10 +52,9 @@ final class PokemonListTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configure
-    func configure(model: PokemonListTableViewCellViewModel) {
-        self.pokemonNameLabel.text = model.name
-//        self.pokemonImage.loadImageFromURL(model.imageURL)
-        self.pokemonGameIndexLabel.text = model.gameIndex
+    func configure(with viewModel: PokemonListTableViewCellViewModel) {
+        self.pokemonNameLabel.text = viewModel.name
+        self.pokemonImage.loadImageFromURL(viewModel.imageURL)
     }
 }
 
@@ -81,8 +71,7 @@ private extension PokemonListTableViewCell {
         
         setupContainerView()
         setupBagroundPokemonView()
-//        setupImageView()
-        setupPokemonParametersStackView()
+        setupImageView()
         setUpPokemonNameLabel()
     }
     
@@ -119,36 +108,19 @@ private extension PokemonListTableViewCell {
         ])
     }
     
-//    func setupImageView() {
-//        backgroundPokemonView.addSubview(pokemonImage)
-//        pokemonImage.translatesAutoresizingMaskIntoConstraints = false
-//        pokemonImage.contentMode = .scaleAspectFit
-//        pokemonImage.layer.cornerRadius = Constants.pokemonImageCornerRadius
-//        pokemonImage.clipsToBounds = true
-//        
-//        
-//        NSLayoutConstraint.activate([
-//            pokemonImage.topAnchor.constraint(equalTo: backgroundPokemonView.topAnchor),
-//            pokemonImage.leadingAnchor.constraint(equalTo: backgroundPokemonView.leadingAnchor),
-//            pokemonImage.trailingAnchor.constraint(equalTo: backgroundPokemonView.trailingAnchor),
-//            pokemonImage.bottomAnchor.constraint(equalTo: backgroundPokemonView.bottomAnchor)
-//        ])
-//    }
-    
-    func setupPokemonParametersStackView() {
-        containerView.addSubview(pokemonParametersStackView)
-        pokemonParametersStackView.translatesAutoresizingMaskIntoConstraints = false
-        pokemonParametersStackView.axis = .vertical
-        pokemonParametersStackView.distribution = .fillProportionally
-        pokemonParametersStackView.alignment = .leading
-        pokemonParametersStackView.spacing = 10.0
+    func setupImageView() {
+        backgroundPokemonView.addSubview(pokemonImage)
+        pokemonImage.translatesAutoresizingMaskIntoConstraints = false
+        pokemonImage.contentMode = .scaleAspectFit
+        pokemonImage.layer.cornerRadius = Constants.pokemonImageCornerRadius
+        pokemonImage.clipsToBounds = true
         
-        pokemonParametersStackView.addArrangedSubview(pokemonNameLabel)
-        pokemonParametersStackView.addArrangedSubview(pokemonGameIndexLabel)
         
         NSLayoutConstraint.activate([
-            pokemonParametersStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            pokemonParametersStackView.leadingAnchor.constraint(equalTo: backgroundPokemonView.trailingAnchor, constant: Constants.pokemonNameLabelLeadingOffset)
+            pokemonImage.topAnchor.constraint(equalTo: backgroundPokemonView.topAnchor),
+            pokemonImage.leadingAnchor.constraint(equalTo: backgroundPokemonView.leadingAnchor),
+            pokemonImage.trailingAnchor.constraint(equalTo: backgroundPokemonView.trailingAnchor),
+            pokemonImage.bottomAnchor.constraint(equalTo: backgroundPokemonView.bottomAnchor)
         ])
     }
     
@@ -159,8 +131,7 @@ private extension PokemonListTableViewCell {
         
         NSLayoutConstraint.activate([
             pokemonNameLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            pokemonNameLabel.leadingAnchor.constraint(equalTo: backgroundPokemonView.trailingAnchor, constant: Constants.pokemonNameLabelLeadingOffset),
-            
+            pokemonNameLabel.leadingAnchor.constraint(equalTo: backgroundPokemonView.trailingAnchor, constant: Constants.pokemonNameLabelLeadingOffset)
         ])
     }
 }

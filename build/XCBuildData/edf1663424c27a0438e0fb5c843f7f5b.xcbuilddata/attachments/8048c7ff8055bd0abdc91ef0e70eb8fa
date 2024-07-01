@@ -35,16 +35,6 @@
     "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/NetworkManager.swiftdeps",
     "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/NetworkManager~partial.swiftmodule"
   },
-  "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/APIClient/Request.swift" : {
-    "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.swiftconstvalues",
-    "dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.d",
-    "diagnostics" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.dia",
-    "index-unit-output-path" : "/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.o",
-    "llvm-bc" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.bc",
-    "object" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.o",
-    "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request.swiftdeps",
-    "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Request~partial.swiftmodule"
-  },
   "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/Controllers/PokemonDetailsViewController.swift" : {
     "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewController.swiftconstvalues",
     "dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewController.d",
@@ -64,6 +54,16 @@
     "object" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonsListViewController.o",
     "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonsListViewController.swiftdeps",
     "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonsListViewController~partial.swiftmodule"
+  },
+  "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/Managers/ImageLoader.swift" : {
+    "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.swiftconstvalues",
+    "dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.d",
+    "diagnostics" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.dia",
+    "index-unit-output-path" : "/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.o",
+    "llvm-bc" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.bc",
+    "object" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.o",
+    "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader.swiftdeps",
+    "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/ImageLoader~partial.swiftmodule"
   },
   "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/Models/Pokemons.swift" : {
     "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Pokemons.swiftconstvalues",

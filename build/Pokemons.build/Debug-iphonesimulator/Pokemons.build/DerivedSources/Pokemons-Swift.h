@@ -313,9 +313,19 @@ SWIFT_CLASS("_TtC8Pokemons11AppDelegate")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImage;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC8Pokemons11ImageLoader")
+@interface ImageLoader : UIImageView
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSString;
 @class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC8Pokemons28PokemonDetailsViewController")
 @interface PokemonDetailsViewController : UIViewController
@@ -339,14 +349,15 @@ SWIFT_CLASS("_TtC8Pokemons16PokemonsListView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
 @class UITableView;
 @class NSIndexPath;
 
 @interface PokemonsListView (SWIFT_EXTENSION(Pokemons)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 SWIFT_CLASS("_TtC8Pokemons26PokemonsListViewController")
@@ -355,6 +366,7 @@ SWIFT_CLASS("_TtC8Pokemons26PokemonsListViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 @class UIWindow;

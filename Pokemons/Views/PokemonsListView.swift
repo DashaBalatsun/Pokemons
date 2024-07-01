@@ -8,8 +8,8 @@
 import UIKit
 
 final class PokemonsListView: UIView {
-    
-    private var viewModel = PokemonsListViewModel() {
+     
+    private var viewModel: PokemonsListViewModel? {
         didSet {
             spinner.stopAnimating()
             tableView.isHidden = false
@@ -72,7 +72,7 @@ extension PokemonsListView {
         )
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(PokemonListTableViewCell.self, forCellReuseIdentifier: PokemonListTableViewCell.cellIdentifier)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5.0),
@@ -85,11 +85,18 @@ extension PokemonsListView {
 
 extension PokemonsListView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel?.cellViewModels.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonListTableViewCell.cellIdentifier, for: indexPath) as? PokemonListTableViewCell else { fatalError() }
+        guard let cellViewModels = viewModel?.cellViewModels else { fatalError() }
+        let cellViewModel = cellViewModels[indexPath.row]
+        cell.configure(with: cellViewModel)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }

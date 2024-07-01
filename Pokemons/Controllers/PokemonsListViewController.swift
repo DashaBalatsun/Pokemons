@@ -14,9 +14,16 @@ final class PokemonsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = "Pokemons"
+        view.backgroundColor = UIColor(
+            red: 11/255,
+            green: 17/255,
+            blue: 36/255,
+            alpha: 1
+        )
+        title = "Pokemons".uppercased()
         setupViews()
+        viewModel.delegate = self
+        viewModel.fetchPokemons()
     }
 }
 
@@ -34,5 +41,11 @@ extension PokemonsListViewController {
             pokemonListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             pokemonListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+extension PokemonsListViewController: PokemonsListViewModelDelegate {
+    func didFetchInitialPokemons() {
+        pokemonListView.configure(with: viewModel)
     }
 }
