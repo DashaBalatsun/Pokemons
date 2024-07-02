@@ -1,0 +1,18 @@
+"/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonsList/PokemonListTableViewCellViewModel.swift":
+  object: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.o"
+  dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.d"
+  const-values: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.swiftconstvalues"
+  swift-dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.swiftdeps"
+  diagnostics: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.dia"
+"/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/Views/PokemonDetails/PokemonTypeView.swift":
+  dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonTypeView.d"
+  object: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonTypeView.o"
+  diagnostics: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonTypeView.dia"
+  swift-dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonTypeView.swiftdeps"
+  const-values: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonTypeView.swiftconstvalues"
+"/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/APIClient/Endpoint.swift":
+  diagnostics: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Endpoint.dia"
+  const-values: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Endpoint.swiftconstvalues"
+  object: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Endpoint.o"
+  swift-dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Endpoint.swiftdeps"
+  dependencies: "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/Endpoint.d"

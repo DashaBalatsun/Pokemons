@@ -3,4 +3,54 @@
    uuid = "668D51CC-DC50-4799-9947-19D9F8E5B4FE"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57799F39-D680-4E86-B054-10BB2A799842"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pokemons/ViewModels/PokemonsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "PokemonsListViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "57799F39-D680-4E86-B054-10BB2A799842 - c487efe70960e03d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemons.PokemonsListViewModel.pokemons.setter : Swift.Array&lt;Pokemons.Pokemons.Result&gt;"
+                  moduleName = "Pokemons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "57799F39-D680-4E86-B054-10BB2A799842 - cdd897223e92f8aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pokemons.PokemonsListViewModel.init() -&gt; Pokemons.PokemonsListViewModel"
+                  moduleName = "Pokemons"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

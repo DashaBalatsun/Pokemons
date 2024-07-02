@@ -324,6 +324,14 @@ SWIFT_CLASS("_TtC8Pokemons11ImageLoader")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC8Pokemons18PokemonDetailsView")
+@interface PokemonDetailsView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class NSString;
 @class NSBundle;
 
@@ -335,10 +343,37 @@ SWIFT_CLASS("_TtC8Pokemons28PokemonDetailsViewController")
 @end
 
 
+
 SWIFT_CLASS("_TtC8Pokemons24PokemonListTableViewCell")
 @interface PokemonListTableViewCell : UITableViewCell
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_CLASS("_TtC8Pokemons21PokemonParametersView")
+@interface PokemonParametersView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
+
+SWIFT_CLASS("_TtC8Pokemons15PokemonTypeView")
+@interface PokemonTypeView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
+
+SWIFT_CLASS("_TtC8Pokemons24PokemonViewForParameters")
+@interface PokemonViewForParameters : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 

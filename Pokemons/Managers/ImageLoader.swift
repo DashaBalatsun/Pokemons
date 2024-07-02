@@ -11,8 +11,6 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 final class ImageLoader: UIImageView {
     
-    static let shared = ImageLoader()
-    
     var imageUrlString: String?
     
     func loadImageFromURL(_ urlString: String?) {

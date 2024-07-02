@@ -8,22 +8,44 @@
 import UIKit
 
 final class PokemonDetailsViewController: UIViewController {
+    
+    private let pokemonDetailsView = PokemonDetailsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(
+            red: 11/255,
+            green: 17/255,
+            blue: 36/255,
+            alpha: 200/25
+        )
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupNavigationBar() {
+        let titleLabel = UILabel()
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 10.0)
+        titleLabel.sizeToFit()
+        
+        navigationItem.titleView = titleLabel
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.largeTitleDisplayMode = .never
     }
-    */
+}
 
+extension PokemonDetailsViewController {
+    func setupViews() {
+        setupPokemonDetailsView()
+    }
+    
+    func setupPokemonDetailsView() {
+        view.addSubview(pokemonDetailsView)
+        
+        NSLayoutConstraint.activate([
+            pokemonDetailsView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pokemonDetailsView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            pokemonDetailsView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            pokemonDetailsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
