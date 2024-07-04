@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol PokemonsListViewDelegate: AnyObject {
+    func pokemonListView(_ pokemonList: PokemonsListView, didSelect pokemon: PokemonDetailsViewModel)
+}
+
 final class PokemonsListView: UIView {
      
+    weak var delegate: PokemonsListViewDelegate?
+    
     private var viewModel: PokemonsListViewModel? {
         didSet {
             spinner.stopAnimating()
@@ -98,5 +104,12 @@ extension PokemonsListView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let viewModel = viewModel else { return }
+        viewModel.selectRow(atIndexPath: indexPath)
+        delegate?.pokemonListView(self, didSelect: viewModel.viewModelForSelectedRow()!)
     }
 }

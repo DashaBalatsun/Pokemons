@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol PokemonDetailsViewModelDelegate: AnyObject {
+    func didFetchPokemonDetails()
+}
+
 final class PokemonDetailsView: UIView {
+    
+    weak var delegate: PokemonDetailsViewModelDelegate?
+
+    private var viewModel: PokemonDetailsViewModel?
     
     var imageView: ImageLoader = {
         let image = ImageLoader()
@@ -66,11 +74,34 @@ final class PokemonDetailsView: UIView {
             alpha: 200/25
         )
         setupViews()
+        delegate?.didFetchPokemonDetails()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     } 
+    
+    public func configure(with viewModel: PokemonDetailsViewModel) {
+        self.viewModel = viewModel
+        self.imageView.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
+        self.imageViewForBackground.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
+        
+        
+        self.namePokemonLabel.text = viewModel.pokemonDetails?.name.capitalized
+        self.typesPokemonLabel.text = viewModel.pokemonDetails?.abilities[0].ability.name.capitalized
+        let id = viewModel.pokemonDetails?.id
+        self.idPokemon.text = "#00\(id ?? 0)"
+        
+        guard let typesModelFirst = self.viewModel?.getTypesPokemonFirstView() else { return }
+        self.pokemonTypeViewFirst.configure(with: typesModelFirst)
+        
+        guard let typesModelSecond = self.viewModel?.getTypesPokemonSecondtView() else { return }
+        
+        self.pokemonTypeViewSecond.configure(with: typesModelSecond)
+        
+        guard let parametersModel = self.viewModel?.getParametersModel() else { return }
+        self.parametersView.configure(with: parametersModel)
+    }
 }
 
 //MARK: - SetUp PokemonDetailsView

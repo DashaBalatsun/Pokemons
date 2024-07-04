@@ -10,8 +10,7 @@ import Foundation
 final class PokemonListTableViewCellViewModel: Hashable, Equatable {
     
     private var pokemon: Pokemons.Result
-    private var pokemonDetails: PokemonDetails?
-    private var selectedIndexPath: IndexPath?
+    public var pokemonDetails: PokemonDetails?
     
     public var name: String {
         return pokemon.name.capitalized
@@ -35,17 +34,6 @@ final class PokemonListTableViewCellViewModel: Hashable, Equatable {
                 print(failure)
             }
         }
-    }
-    
-    func viewModelForSelectedRow() -> PokemonDetailsViewModel? {
-        guard let selectedIndexPath = selectedIndexPath,
-              let pokemonModel = pokemonDetails?[selectedIndexPath.row] else { return nil }
-        let viewModel = PokemonDetailsViewModel(pokemonDetails: pokemonModel)
-        return viewModel
-    }
-    
-    func selectRow(atIndexPath indexPath: IndexPath) {
-        self.selectedIndexPath = indexPath
     }
     
     static func == (lhs: PokemonListTableViewCellViewModel, rhs: PokemonListTableViewCellViewModel) -> Bool {

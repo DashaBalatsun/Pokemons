@@ -22,8 +22,9 @@ final class PokemonsListViewController: UIViewController {
         )
         title = "Pokemons".uppercased()
         setupViews()
-        viewModel.delegate = self
         viewModel.fetchPokemons()
+        viewModel.delegate = self
+        pokemonListView.delegate = self
     }
 }
 
@@ -47,5 +48,12 @@ extension PokemonsListViewController {
 extension PokemonsListViewController: PokemonsListViewModelDelegate {
     func didFetchInitialPokemons() {
         pokemonListView.configure(with: viewModel)
+    }
+}
+
+extension PokemonsListViewController: PokemonsListViewDelegate {
+    func pokemonListView(_ pokemonList: PokemonsListView, didSelect pokemon: PokemonDetailsViewModel) {
+        let vc = PokemonDetailsViewController(viewModel: pokemon)
+        navigationController?.present(vc, animated: true)
     }
 }

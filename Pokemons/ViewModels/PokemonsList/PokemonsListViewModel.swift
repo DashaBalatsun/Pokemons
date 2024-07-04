@@ -26,6 +26,8 @@ final class PokemonsListViewModel {
         }
     }
     
+    private var selectedIndexPath: IndexPath?
+    
     public private(set) var cellViewModels: [PokemonListTableViewCellViewModel] = []
     
     private var hasMoreResults: Bool {
@@ -50,4 +52,16 @@ final class PokemonsListViewModel {
             }
         }
     }
+    
+    func viewModelForSelectedRow() -> PokemonDetailsViewModel? {
+        guard let selectedIndexPath = selectedIndexPath,
+              let pokemonModel = cellViewModels[selectedIndexPath.row].pokemonDetails else { return nil }
+        let viewModel = PokemonDetailsViewModel(pokemonDetails: pokemonModel)
+        return viewModel
+    }
+    
+    func selectRow(atIndexPath indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+    }
+
 }
