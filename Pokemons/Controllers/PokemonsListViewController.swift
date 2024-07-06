@@ -54,6 +54,7 @@ extension PokemonsListViewController: PokemonsListViewModelDelegate {
 extension PokemonsListViewController: PokemonsListViewDelegate {
     func pokemonListView(_ pokemonList: PokemonsListView, didSelect pokemon: PokemonDetailsViewModel) {
         let vc = PokemonDetailsViewController(viewModel: pokemon)
+        vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.present(vc, animated: true)
     }
 }

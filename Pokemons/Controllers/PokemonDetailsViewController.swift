@@ -9,12 +9,13 @@ import UIKit
 
 final class PokemonDetailsViewController: UIViewController {
     
-    private let pokemonDetailsView = PokemonDetailsView()
     private let viewModel: PokemonDetailsViewModel?
+    private let pokemonDetailsView = PokemonDetailsView()
     
     init(viewModel: PokemonDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        pokemonDetailsView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +30,6 @@ final class PokemonDetailsViewController: UIViewController {
             blue: 36/255,
             alpha: 200/25
         )
-        pokemonDetailsView.delegate = self
         setupViews()
     }
     

@@ -13,9 +13,13 @@ protocol PokemonDetailsViewModelDelegate: AnyObject {
 
 final class PokemonDetailsView: UIView {
     
-    weak var delegate: PokemonDetailsViewModelDelegate?
+    weak var delegate: PokemonDetailsViewModelDelegate? {
+        didSet {
+            delegate?.didFetchPokemonDetails()
+        }
+    }
 
-    private var viewModel: PokemonDetailsViewModel?
+    private var viewModel: PokemonDetailsViewModel? 
     
     var imageView: ImageLoader = {
         let image = ImageLoader()
@@ -74,7 +78,6 @@ final class PokemonDetailsView: UIView {
             alpha: 200/25
         )
         setupViews()
-        delegate?.didFetchPokemonDetails()
     }
     
     required init?(coder: NSCoder) {
