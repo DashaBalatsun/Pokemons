@@ -9,11 +9,12 @@ import Foundation
 
 final class PokemonListTableViewCellViewModel: Hashable, Equatable {
     
-    private var pokemon: Pokemons.Result
+    private var pokemonResult: Pokemons.Result
     public var pokemonDetails: PokemonDetails?
     
+    
     public var name: String {
-        return pokemon.name.capitalized
+        return pokemonResult.name.capitalized
     }
     
     public var imageURL: String {
@@ -21,12 +22,12 @@ final class PokemonListTableViewCellViewModel: Hashable, Equatable {
     }
     
     init(pokemon: Pokemons.Result) {
-        self.pokemon = pokemon
+        self.pokemonResult = pokemon
         loadDetailsPokemon()
     }
     
     private func loadDetailsPokemon() {
-        NetworkManager.shared.fetchData(url: URL(string: pokemon.url), expecting: PokemonDetails.self) { [weak self] result in
+        NetworkManager.shared.fetchData(url: URL(string: pokemonResult.url), expecting: PokemonDetails.self) { [weak self] result in
             switch result {
             case .success(let success):
                 self?.pokemonDetails = success
@@ -37,7 +38,7 @@ final class PokemonListTableViewCellViewModel: Hashable, Equatable {
     }
     
     static func == (lhs: PokemonListTableViewCellViewModel, rhs: PokemonListTableViewCellViewModel) -> Bool {
-        return lhs.pokemon.name == rhs.pokemon.name
+        return lhs.pokemonResult.name == rhs.pokemonResult.name
     }
     
     func hash(into hasher: inout Hasher) {

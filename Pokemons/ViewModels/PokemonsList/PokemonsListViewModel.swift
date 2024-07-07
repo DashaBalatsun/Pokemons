@@ -27,12 +27,12 @@ final class PokemonsListViewModel {
     }
     
     private var selectedIndexPath: IndexPath?
+    private var pokemonsNext: String?
+    
+    public var isLoadingMorePokemons = false
     
     public private(set) var cellViewModels: [PokemonListTableViewCellViewModel] = []
     
-    private var hasMoreResults: Bool {
-        return false
-    }
     
     init() {}
     
@@ -43,6 +43,7 @@ final class PokemonsListViewModel {
         { [weak self] result in
             switch result {
             case .success(let success):
+                self?.pokemonsNext = success.next
                 self?.pokemons = success.results
                 DispatchQueue.main.async {
                     self?.delegate?.didFetchInitialPokemons()
@@ -52,6 +53,43 @@ final class PokemonsListViewModel {
             }
         }
     }
+    
+    // MARK: - Paginate if adidtional pokemons  are needed
+    public func fetchAdditionalPokemons()  {
+        guard !isLoadingMorePokemons else {
+            return
+        }
+        
+       guard let nextUrlString = pokemonsNext,
+             let url = URL(string: nextUrlString) else { return }
+        
+        print("\(url)")
+        isLoadingMorePokemons = true
+        
+        NetworkManager.shared.fetchData(
+            url: url,
+            expecting: Pokemons.self)
+        { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let success):
+                let next = success.next
+                let moreResults = success.results
+                strongSelf.pokemonsNext = next
+                strongSelf.cellViewModels.append(contentsOf: moreResults.compactMap(({
+                    return PokemonListTableViewCellViewModel(pokemon: $0)
+                })))
+                
+                DispatchQueue.main.async {
+                    strongSelf.isLoadingMorePokemons = false
+                }
+            case .failure(let failure):
+                print(String(describing: failure))
+                strongSelf.isLoadingMorePokemons = false
+            }
+        }
+    }
+
     
     func viewModelForSelectedRow() -> PokemonDetailsViewModel? {
         guard let selectedIndexPath = selectedIndexPath,

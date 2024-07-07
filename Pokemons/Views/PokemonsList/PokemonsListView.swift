@@ -113,3 +113,35 @@ extension PokemonsListView: UITableViewDelegate, UITableViewDataSource {
         delegate?.pokemonListView(self, didSelect: viewModel.viewModelForSelectedRow()!)
     }
 }
+
+extension PokemonsListView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let viewModel = viewModel,
+              !viewModel.cellViewModels.isEmpty,
+              !viewModel.isLoadingMorePokemons else { return }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.2 , repeats: false) { [weak self] t in
+            let offset = scrollView.contentOffset.y
+            let totalContentHieght = scrollView.contentSize.height
+            let totalScrolViewFixedHeight = scrollView.frame.size.height
+            
+            if offset >= (totalContentHieght - totalScrolViewFixedHeight - 120) {
+                DispatchQueue.main.async {
+                    self?.showLoadingIndicator()
+                }
+                viewModel.fetchAdditionalPokemons()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
+                    self?.tableView.reloadData()
+                })
+            }
+            t.invalidate()
+        }
+    }
+
+    private func showLoadingIndicator() {
+        let footer = TableLoadingFooterView()
+        footer.frame = CGRect(x: 0, y: 0, width: frame.width, height: 100)
+        tableView.tableFooterView = footer
+    }
+}

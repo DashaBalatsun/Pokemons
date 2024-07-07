@@ -20,7 +20,6 @@ struct Pokemons: Decodable {
     }
 }
 
-
 struct PokemonDetails: Decodable {
     let abilities: [Abilities]
     let gameIndices: [GameIndices]

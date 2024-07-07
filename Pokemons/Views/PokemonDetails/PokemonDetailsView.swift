@@ -15,11 +15,14 @@ final class PokemonDetailsView: UIView {
     
     weak var delegate: PokemonDetailsViewModelDelegate? {
         didSet {
+            spinner.stopAnimating()
             delegate?.didFetchPokemonDetails()
         }
     }
 
     private var viewModel: PokemonDetailsViewModel? 
+    
+    private let spinner = UIActivityIndicatorView(style: .large)
     
     var imageView: ImageLoader = {
         let image = ImageLoader()
@@ -77,6 +80,7 @@ final class PokemonDetailsView: UIView {
             blue: 36/255,
             alpha: 200/25
         )
+        spinner.startAnimating()
         setupViews()
     }
     
@@ -88,20 +92,14 @@ final class PokemonDetailsView: UIView {
         self.viewModel = viewModel
         self.imageView.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
         self.imageViewForBackground.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
-        
-        
         self.namePokemonLabel.text = viewModel.pokemonDetails?.name.capitalized
         self.typesPokemonLabel.text = viewModel.pokemonDetails?.abilities[0].ability.name.capitalized
         let id = viewModel.pokemonDetails?.id
         self.idPokemon.text = "#00\(id ?? 0)"
-        
         guard let typesModelFirst = self.viewModel?.getTypesPokemonFirstView() else { return }
         self.pokemonTypeViewFirst.configure(with: typesModelFirst)
-        
         guard let typesModelSecond = self.viewModel?.getTypesPokemonSecondtView() else { return }
-        
         self.pokemonTypeViewSecond.configure(with: typesModelSecond)
-        
         guard let parametersModel = self.viewModel?.getParametersModel() else { return }
         self.parametersView.configure(with: parametersModel)
     }
@@ -111,11 +109,25 @@ final class PokemonDetailsView: UIView {
 extension PokemonDetailsView {
     
     func setupViews() {
+        setupSpinner()
         setupIdPokemon()
         setupImageView()
         setupStackViewForParameters()
         setupStackViewForTypes()
         setupStackViewParameters()
+    }
+    
+    func setupSpinner() {
+        addSubview(spinner)
+        spinner.hidesWhenStopped = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            spinner.heightAnchor.constraint(equalToConstant: 100),
+            spinner.widthAnchor.constraint(equalToConstant: 100),
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
+            spinner.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
     }
     
     func setupIdPokemon() {

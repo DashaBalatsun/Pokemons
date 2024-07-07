@@ -15,7 +15,6 @@ final class PokemonDetailsViewController: UIViewController {
     init(viewModel: PokemonDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        pokemonDetailsView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -30,6 +29,7 @@ final class PokemonDetailsViewController: UIViewController {
             blue: 36/255,
             alpha: 200/25
         )
+        pokemonDetailsView.delegate = self
         setupViews()
     }
     
