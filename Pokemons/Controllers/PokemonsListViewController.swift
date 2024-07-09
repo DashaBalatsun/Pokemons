@@ -31,6 +31,7 @@ final class PokemonsListViewController: UIViewController {
 extension PokemonsListViewController {
     func setupViews() {
         setupPokemonListView()
+        setupNavBar()
     }
     
     func setupPokemonListView() {
@@ -42,6 +43,26 @@ extension PokemonsListViewController {
             pokemonListView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             pokemonListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    func setupNavBar() {
+        title = "Pokemons"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let navBarAppereance = UINavigationBarAppearance()
+        navBarAppereance.configureWithOpaqueBackground()
+        navBarAppereance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navBarAppereance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navBarAppereance.backgroundColor = UIColor(
+            red: 11/255,
+            green: 17/255,
+            blue: 36/255,
+            alpha: 200/25
+        )
+        
+        navigationController?.navigationBar.standardAppearance = navBarAppereance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppereance
     }
 }
 

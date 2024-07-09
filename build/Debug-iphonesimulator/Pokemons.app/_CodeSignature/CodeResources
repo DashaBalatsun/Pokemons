@@ -4,21 +4,33 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<key>AppIcon60x60@2x.png</key>
 		<data>
-		gwfgZH5GFXPhDaZqrP7thpA0c9g=
+		CnZFr41B59yes3xQQSsDQWx0j9Y=
 		</data>
-		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
+		<key>AppIcon76x76@2x~ipad.png</key>
 		<data>
-		n2t8gsDpfE6XkhG31p7IQJRxTxU=
+		/ucZpFb7EKuFHeJ6fwevAGcN610=
 		</data>
-		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
+		<key>Assets.car</key>
 		<data>
-		ZVgM1+KwZcZnwhgaI0F7Bt1ba2c=
+		1SY4REkkoyCOeuY0rRBKkQHl3eA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NtgpanVvwYD+pOtW5P1rFrOxBXA=
+		Ur3Fq5O2IHclqarvCLOewgiKNRk=
+		</data>
+		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<data>
+		aFqLa7vS4wS8i0pLt0aHCGR+Wic=
+		</data>
+		<key>LaunchScreen.storyboardc/Info.plist</key>
+		<data>
+		n2t8gsDpfE6XkhG31p7IQJRxTxU=
+		</data>
+		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
+		<data>
+		ZVgM1+KwZcZnwhgaI0F7Bt1ba2c=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -27,21 +39,42 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<key>AppIcon60x60@2x.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z24krkMdTZmEwqmtpvD7IK9N6ly/XJxWIjk/WvCnNhQ=
+			P4UnAUQhEQspv++Hx539Lzht3SjCVX3OY20i+QQAObM=
 			</data>
 		</dict>
-		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
+		<key>AppIcon76x76@2x~ipad.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tNm5HbDl4NpUclNhO2J/84NMyRIwYdxUMGSXZRJ3cXI=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pIcg9zg7Mqt0sbmtWq6qqW/lBNMVn1KYTii0SnJuuwQ=
+			</data>
+		</dict>
+		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IBvRJBS90aCT+w1vZQ/pzJ2WMnJUzPGS9gtiH43J6xM=
+			</data>
+		</dict>
+		<key>LaunchScreen.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			HyVdXMU7Ux4/KalAao30mpWOK/lEPT4gvYN09wf31cg=
 			</data>
 		</dict>
-		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
+		<key>LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>

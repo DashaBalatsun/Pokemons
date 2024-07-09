@@ -5,7 +5,18 @@
 	<key>colors</key>
 	<array/>
 	<key>images</key>
-	<array/>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/Resources/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNamePokemon</string>
+			<key>relativePath</key>
+			<string>./Pokemon.imageset</string>
+			<key>swiftSymbol</key>
+			<string>pokemon</string>
+		</dict>
+	</array>
 	<key>symbols</key>
 	<array/>
 </dict>
