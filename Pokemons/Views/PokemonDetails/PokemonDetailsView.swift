@@ -30,12 +30,6 @@ final class PokemonDetailsView: UIView {
         return image
     }()
     
-    var imageViewForBackground: ImageLoader = {
-        let image = ImageLoader()
-        image.contentMode = .scaleAspectFit
-        return image
-    }()
-    
     var idPokemon: UILabel = {
         let id = UILabel()
         id.textColor = .white
@@ -91,7 +85,6 @@ final class PokemonDetailsView: UIView {
     public func configure(with viewModel: PokemonDetailsViewModel) {
         self.viewModel = viewModel
         self.imageView.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
-        self.imageViewForBackground.loadImageFromURL(viewModel.pokemonDetails?.sprites.other.home.frontDefault)
         self.namePokemonLabel.text = viewModel.pokemonDetails?.name.capitalized
         self.typesPokemonLabel.text = viewModel.pokemonDetails?.abilities[0].ability.name.capitalized
         let id = viewModel.pokemonDetails?.id
@@ -157,22 +150,6 @@ extension PokemonDetailsView {
             imageView.topAnchor.constraint(equalTo: idPokemon.bottomAnchor, constant: 20.0),
             imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-        ])
-    }
-    
-    func setupImageViewForBackground() {
-        addSubview(imageViewForBackground)
-        imageViewForBackground.translatesAutoresizingMaskIntoConstraints = false
-        imageViewForBackground.contentMode = .scaleAspectFit
-        imageViewForBackground.clipsToBounds = true
-        
-        NSLayoutConstraint.activate([
-            imageViewForBackground.topAnchor.constraint(equalTo: bottomAnchor, constant: 20.0),
-            imageViewForBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageViewForBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageViewForBackground.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.35),
-            imageViewForBackground.centerXAnchor.constraint(equalTo: centerXAnchor),
             
         ])
     }

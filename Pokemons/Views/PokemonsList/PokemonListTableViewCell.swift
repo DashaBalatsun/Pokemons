@@ -38,7 +38,6 @@ final class PokemonListTableViewCell: UITableViewCell {
     
     private let containerView = UIView()
     private let backgroundPokemonView = UIView()
-    
     private let pokemonImage = ImageLoader()
     
     // MARK: - Init

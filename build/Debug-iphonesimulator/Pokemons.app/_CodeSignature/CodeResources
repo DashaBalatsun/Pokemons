@@ -16,9 +16,13 @@
 		<data>
 		1SY4REkkoyCOeuY0rRBKkQHl3eA=
 		</data>
+		<key>FontsFree-Net-NoyhGeometricSlimBlack.ttf</key>
+		<data>
+		L/Gcr/cYbyYYecawkGL8KZGT4eM=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		Ur3Fq5O2IHclqarvCLOewgiKNRk=
+		18KNUzw8lDX1y40gsHce/r7FAT0=
 		</data>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -58,6 +62,13 @@
 			<key>hash2</key>
 			<data>
 			pIcg9zg7Mqt0sbmtWq6qqW/lBNMVn1KYTii0SnJuuwQ=
+			</data>
+		</dict>
+		<key>FontsFree-Net-NoyhGeometricSlimBlack.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q6ShmOKsVKzGYMw7cooJZJnukZ6uQMjgjIXPyeyS8BU=
 			</data>
 		</dict>
 		<key>LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
