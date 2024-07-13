@@ -62,7 +62,7 @@ extension PokemonParametersView {
         parametersStackView.axis = .horizontal
         parametersStackView.distribution = .fillProportionally
         parametersStackView.alignment = .center
-        parametersStackView.spacing = 15.0
+        parametersStackView.spacing = 10.0
         parametersStackView.addArrangedSubview(weightView)
         parametersStackView.addArrangedSubview(verticalStick)
         parametersStackView.addArrangedSubview(heightView)
@@ -71,8 +71,8 @@ extension PokemonParametersView {
         
         NSLayoutConstraint.activate([
             parametersStackView.topAnchor.constraint(equalTo: topAnchor),
-            parametersStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15.0),
-            parametersStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15.0),
+            parametersStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            parametersStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             parametersStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }

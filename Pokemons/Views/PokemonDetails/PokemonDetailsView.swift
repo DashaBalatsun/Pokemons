@@ -190,8 +190,8 @@ extension PokemonDetailsView {
         
         NSLayoutConstraint.activate([
             parametersView.topAnchor.constraint(equalTo: stackViewForParameters.bottomAnchor, constant: 60.0),
-            parametersView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0),
-            parametersView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
+            parametersView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.0),
+            parametersView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.0),
             parametersView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.10)
         ])
     }

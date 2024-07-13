@@ -95,15 +95,15 @@
     "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/SceneDelegate.swiftdeps",
     "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/SceneDelegate~partial.swiftmodule"
   },
-  "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonDetails/PokemonDetailViewModel.swift" : {
-    "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.swiftconstvalues",
-    "dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.d",
-    "diagnostics" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.dia",
-    "index-unit-output-path" : "/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.o",
-    "llvm-bc" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.bc",
-    "object" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.o",
-    "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel.swiftdeps",
-    "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailViewModel~partial.swiftmodule"
+  "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonDetails/PokemonDetailsViewModel.swift" : {
+    "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.swiftconstvalues",
+    "dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.d",
+    "diagnostics" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.dia",
+    "index-unit-output-path" : "/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.o",
+    "llvm-bc" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.bc",
+    "object" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.o",
+    "swift-dependencies" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel.swiftdeps",
+    "swiftmodule" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonDetailsViewModel~partial.swiftmodule"
   },
   "/Users/dasha/Desktop/Study/Pokemons/Pokemons/Pokemons/ViewModels/PokemonsList/PokemonListTableViewCellViewModel.swift" : {
     "const-values" : "/Users/dasha/Desktop/Study/Pokemons/Pokemons/build/Pokemons.build/Debug-iphonesimulator/Pokemons.build/Objects-normal/arm64/PokemonListTableViewCellViewModel.swiftconstvalues",

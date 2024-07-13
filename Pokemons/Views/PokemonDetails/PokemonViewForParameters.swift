@@ -17,13 +17,15 @@ final class PokemonViewForParameters: UIView {
     struct PokemonViewForParametersModel {
         let parameter: Int?
         let parameterName: String?
-        let symbol: Character?
         let unit: String?
+        let parameterImage: UIImage?
     }
     
     private let parameterLabel = UILabel()
     private let nameForParameters = UILabel()
     private let parametersNameStackView = UIStackView()
+    private let parametersStackView = UIStackView()
+    private var parameterImage = UIImageView()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -39,12 +41,13 @@ final class PokemonViewForParameters: UIView {
     func configure(with model: PokemonViewForParametersModel) {
         guard let parameter = model.parameter,
               let parameterName = model.parameterName,
-              let symbol = model.symbol,
-              let unit = model.unit else {
+              let unit = model.unit,
+              let image = model.parameterImage else {
             return
         }
-        self.parameterLabel.text = String(symbol) + "   " + String(Float(parameter)/10) + " " + unit
+        self.parameterLabel.text = String(Float(parameter)/10) + " " + unit
         self.nameForParameters.text = parameterName
+        self.parameterImage.image = image
     }
     
 }
@@ -53,25 +56,46 @@ extension PokemonViewForParameters {
     //    MARK: - Private methods
     func setupItems() {
         setupParametersNameStackView()
+        setupParametersStackView()
         setupParametrsLabel()
         setupNameForParameter()
+        setupParameterImage()
     }
     
     func setupParametersNameStackView() {
         addSubview(parametersNameStackView)
         parametersNameStackView.translatesAutoresizingMaskIntoConstraints = false
-        parametersNameStackView.axis = .vertical
-        parametersNameStackView.spacing = 0.5
-        parametersNameStackView.distribution = .fillEqually
-        parametersNameStackView.alignment = .center
+        parametersNameStackView.axis = .horizontal
+        parametersNameStackView.spacing = 10
+        parametersNameStackView.distribution = .equalSpacing
         
+        parametersNameStackView.addArrangedSubview(parameterImage)
         parametersNameStackView.addArrangedSubview(parameterLabel)
-        parametersNameStackView.addArrangedSubview(nameForParameters)
         
         NSLayoutConstraint.activate([
-            parametersNameStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
-            parametersNameStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            parametersNameStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0)
+            parameterLabel.bottomAnchor.constraint(equalTo: parameterImage.bottomAnchor),
+        ])
+        
+        if nameForParameters.text == "Height" {
+            parameterImage.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        }
+    }
+    
+    func setupParametersStackView() {
+        addSubview(parametersStackView)
+        parametersStackView.translatesAutoresizingMaskIntoConstraints = false
+        parametersStackView.axis = .vertical
+        parametersStackView.spacing = 10
+//        parametersStackView.distribution = .fill
+        parametersStackView.alignment = .center
+        
+        parametersStackView.addArrangedSubview(nameForParameters)
+        parametersStackView.addArrangedSubview(parametersNameStackView)
+        
+        NSLayoutConstraint.activate([
+            parametersStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10.0),
+            parametersStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            parametersStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.0)
         ])
         
     }
@@ -84,6 +108,15 @@ extension PokemonViewForParameters {
     func setupNameForParameter() {
         nameForParameters.font = Constants.nameForParameterLabelFont
         nameForParameters.textColor = .darkGray
+    }
+
+    func setupParameterImage() {
+        parameterImage.tintColor = UIColor(white: 1, alpha: 0.8)
+        
+        NSLayoutConstraint.activate([
+            parameterImage.widthAnchor.constraint(equalToConstant: 25),
+            parameterImage.heightAnchor.constraint(equalToConstant: 25)
+        ])
     }
 }
 

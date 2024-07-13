@@ -1,11 +1,11 @@
 //
-//  PokemonDetailViewModel.swift
+//  PokemonDetailsViewModel.swift
 //  Pokemons
 //
 //  Created by Дарья Балацун on 23.06.24.
 //
 
-import Foundation
+import UIKit
 
 final class PokemonDetailsViewModel {
     
@@ -47,8 +47,8 @@ final class PokemonDetailsViewModel {
         let model: PokemonViewForParameters.PokemonViewForParametersModel = .init(
             parameter: pokemonDetails?.weight,
             parameterName: "Weight",
-            symbol: "⚖️",
-            unit: "kg"
+            unit: "kg",
+            parameterImage: UIImage(systemName: "scalemass.fill")
         )
         
         return model
@@ -58,8 +58,8 @@ final class PokemonDetailsViewModel {
         let model: PokemonViewForParameters.PokemonViewForParametersModel = .init(
             parameter: pokemonDetails?.height,
             parameterName: "Height",
-            symbol: "📏",
-            unit: "m"
+            unit: "m",
+            parameterImage: UIImage(systemName: "ruler.fill")
         )
         
         return model
