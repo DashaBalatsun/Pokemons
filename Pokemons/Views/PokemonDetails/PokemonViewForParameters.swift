@@ -10,7 +10,7 @@ import UIKit
 final class PokemonViewForParameters: UIView {
     // MARK: - Constants
     private enum Constants {
-        static let parameterLabelFont = UIFont(name: "NoyhGeometricSlim-Black", size: 22.0)
+        static let parameterLabelFont = UIFont(name: "NoyhGeometricSlim-Black", size: 23.0)
         static let nameForParameterLabelFont: UIFont = .systemFont(ofSize: 18.0, weight: .regular)
     }
     
@@ -24,6 +24,7 @@ final class PokemonViewForParameters: UIView {
     private let parameterLabel = UILabel()
     private let nameForParameters = UILabel()
     private let parametersNameStackView = UIStackView()
+    private let containerView = UIView()
     private let parametersStackView = UIStackView()
     private var parameterImage = UIImageView()
     
@@ -48,6 +49,9 @@ final class PokemonViewForParameters: UIView {
         self.parameterLabel.text = String(Float(parameter)/10) + " " + unit
         self.nameForParameters.text = parameterName
         self.parameterImage.image = image
+        if nameForParameters.text == "Height" {
+            parameterImage.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        }
     }
     
 }
@@ -55,6 +59,7 @@ final class PokemonViewForParameters: UIView {
 extension PokemonViewForParameters {
     //    MARK: - Private methods
     func setupItems() {
+        setupContainerView()
         setupParametersNameStackView()
         setupParametersStackView()
         setupParametrsLabel()
@@ -62,23 +67,29 @@ extension PokemonViewForParameters {
         setupParameterImage()
     }
     
+    func setupContainerView() {
+        addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(parameterLabel)
+        parameterLabel.translatesAutoresizingMaskIntoConstraints = false
+    
+        NSLayoutConstraint.activate([
+            parameterLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 6.0),
+            parameterLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            parameterLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            parameterLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+        ])
+    }
+    
     func setupParametersNameStackView() {
         addSubview(parametersNameStackView)
         parametersNameStackView.translatesAutoresizingMaskIntoConstraints = false
         parametersNameStackView.axis = .horizontal
         parametersNameStackView.spacing = 10
-        parametersNameStackView.distribution = .equalSpacing
+        parametersNameStackView.distribution = .equalCentering
         
         parametersNameStackView.addArrangedSubview(parameterImage)
-        parametersNameStackView.addArrangedSubview(parameterLabel)
-        
-        NSLayoutConstraint.activate([
-            parameterLabel.bottomAnchor.constraint(equalTo: parameterImage.bottomAnchor),
-        ])
-        
-        if nameForParameters.text == "Height" {
-            parameterImage.transform = CGAffineTransform(rotationAngle: .pi / 2)
-        }
+        parametersNameStackView.addArrangedSubview(containerView)
     }
     
     func setupParametersStackView() {
@@ -86,7 +97,6 @@ extension PokemonViewForParameters {
         parametersStackView.translatesAutoresizingMaskIntoConstraints = false
         parametersStackView.axis = .vertical
         parametersStackView.spacing = 10
-//        parametersStackView.distribution = .fill
         parametersStackView.alignment = .center
         
         parametersStackView.addArrangedSubview(nameForParameters)

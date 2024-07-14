@@ -62,8 +62,7 @@ final class PokemonsListViewModel {
         
        guard let nextUrlString = pokemonsNext,
              let url = URL(string: nextUrlString) else { return }
-        
-        print("\(url)")
+    
         isLoadingMorePokemons = true
         
         NetworkManager.shared.fetchData(
