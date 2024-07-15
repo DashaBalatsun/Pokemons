@@ -88,7 +88,7 @@ final class PokemonDetailsView: UIView {
         self.namePokemonLabel.text = viewModel.pokemonDetails?.name.capitalized
         self.typesPokemonLabel.text = viewModel.pokemonDetails?.abilities[0].ability.name.capitalized
         let id = viewModel.pokemonDetails?.id
-        self.idPokemon.text = "#00\(id ?? 0)"
+        self.idPokemon.text = "#0\(id ?? 0)"
         guard let typesModelFirst = self.viewModel?.getTypesPokemonFirstView() else { return }
         self.pokemonTypeViewFirst.configure(with: typesModelFirst)
         guard let typesModelSecond = self.viewModel?.getTypesPokemonSecondtView() else { return }
